@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>132</y>
+      <w>385</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Klant
+--
+-next_id: int
+#tickets: List
+
+--
++Klant(String naam, String adres)
++ticketGekocht(Ticket t)
++verschuldigdBedrag()
++gemiddeldeTicketPrijs()
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>187</x>
+      <y>418</y>
+      <w>297</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>Artiest
+--
+-next_id: int
+
+--
++Artiest(String naam, String adres)
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>187</x>
+      <y>143</y>
+      <w>308</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Persoon
+--
+-Naam: String
+-Adres: String
+--
++Persoon(String naam, String adres)
+
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1232</x>
+      <y>858</y>
+      <w>385</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>Ticket
+--
+-next_id: int
+-id: int
+-klant: Klant
+-voorstelling: Voorstelling
+--
++Ticket(Klant klant, Voorstelling voorstelling)
+
+
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>649</x>
+      <y>429</y>
+      <w>594</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>TicketMaster
+--
+artiesten: Map&lt;Integer, Artiest&gt;
+klanten: Map&lt;Integer, Klant&gt;
+voorstellingen: Map&lt;Integer, Voorstelling&gt;
+--
++registreerArtiest(String naam, String adres): int
++registreerKlant(String naam, sString adres): int
++meldVoorstellingAan(int a_id, String adres, String datum, double prijs): int
++koopTicket(int k_id, int v_id): int
+-isGeregistreerdKlant(int k_id): boolean
+-isGeregistreerdArtiest(int a_id): boolean
+-isGeregistreerdVoorstelling(int v_id): boolean
++totaleKosten(int k_id): double
+--
+getters/setters/toString weggelaten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>187</x>
+      <y>858</y>
+      <w>374</w>
+      <h>242</h>
+    </coordinates>
+    <panel_attributes>Voorstelling
+--
+-next_id: int
+-id: int
+-artiest: Artiest
+-adres: String
+-datum: String
+-prijs: Double
+--
++Voorstelling(Artiest artiest, 
+         String adres, 
+         String datum, 
+         double prijs)
+--
+getters/setters/toString weggelaten
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>319</x>
+      <y>308</y>
+      <w>33</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>484</x>
+      <y>198</y>
+      <w>770</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;680.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1408</x>
+      <y>319</y>
+      <w>88</w>
+      <h>561</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..*
+can buy</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;490.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>561</y>
+      <w>110</w>
+      <h>319</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..*
+can perform</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>935</y>
+      <w>704</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+sells</panel_attributes>
+    <additional_attributes>10.0;20.0;620.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>473</x>
+      <y>506</y>
+      <w>198</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+keeps track</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1232</x>
+      <y>319</y>
+      <w>143</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+maintains record</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>682</y>
+      <w>231</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+holds registration</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1177</x>
+      <y>682</y>
+      <w>154</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+facilitates sale</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;160.0</additional_attributes>
+  </element>
+</diagram>
